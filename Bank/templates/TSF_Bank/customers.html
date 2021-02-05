@@ -1,0 +1,26 @@
+{% extends 'TSF_Bank/base.html' %}{% load static %} {% block title %}Home | Bank{% endblock %} {% block content %}
+    
+    <h1 class="display-5 text-success shadow p-2 mb-3 rounded">The Spark Foundation</h1>
+    <h2 class="display-7 text-success">All Customer list</h2>
+    {% if cust_list %}
+    <table>
+        <Thead>
+            <th>Ename</th>
+            <th>Email</th>
+            <th>Account_No</th>
+            <th>Balance</th>
+        </Thead>
+        {% for cust in cust_list %}
+        <tr>
+            <td>{{cust.ename}}</td>
+            <td>{{cust.email}}</td>
+            <td>{{cust.account_number}}</td>
+            <td>{{cust.account_balance}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No Customer Found</p>
+    {% endif %}      
+    
+{% endblock %}

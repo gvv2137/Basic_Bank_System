@@ -1,0 +1,28 @@
+{% extends 'TSF_Bank/base.html' %}{% load static %} {% block title %}Home | Bank{% endblock %} {% block content %}
+<h1 class="display-5 text-success shadow p-2 mb-3 rounded">The Spark Foundation</h1>
+    <h2 class="display-7 text-success">All Transactions</h2>
+
+    <table class="tb text-center">
+      <thead>
+        <tr>
+          <th scope="col">Debited From</th>
+          <th scope="col">Credit To</th>
+          <th scope="col">Amount</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for transaction in transactions %}
+        <tr>
+          <td>{{transaction.debited_from.ename}}</td>
+          <td>{{transaction.credited_to.ename}}</td>
+          <td>{{transaction.amount}}</td>
+       
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
